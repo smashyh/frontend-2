@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import DropdownItem from "./DropdownItem";
 
 const Background = styled.div`
     //font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -21,13 +22,45 @@ const Background = styled.div`
 
 function DropdownButton(props)
 {
+    const [dropdownLabels, setDropdownLabels] = useState([]);
     const [toggle, setToggle] = useState(false);
+
+    // var categoryElements = [];
+    // for (var i = 0; i < props.$categories.length; i++)
+    // {
+    //     //<DropdownItem categoryName={ props.$categories[i].toString() }/>
+    //     categoryElements.push(<DropdownItem key={props.$categories[i].toString()} categoryName={ props.$categories[i].toString() }/>);
+    // }
+
+    if (toggle)
+    {
+        
+    }
+
+    useEffect(() =>
+    {
+        const tempArr = [];
+        for (let i = 0; i < props.$categories.length; i++)
+        {
+            tempArr.push
+            ({
+                id: i,
+                category: props.$categories[i],
+            })
+        }
+
+        setDropdownLabels([...dropdownLabels, ...tempArr]);
+    }, []);
+
+    const listItems = dropdownLabels.map(label => <DropdownItem key={ label.id } $categoryName={ label.category }/>);
 
     return(
         <Background onClick={() => setToggle(!toggle)} $toggle={ toggle }>
-            { toggle ? "TOGGELED" : props.text }
+            { props.text }
+            {
+                toggle && listItems
+            }
         </Background>
-
     );
 }
 

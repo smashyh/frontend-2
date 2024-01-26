@@ -16,9 +16,11 @@ const Background = styled.div`
 function Header()
 {
     // todo: return logo, menu, and account/shopping cart logo
+    var cat = ['shit', 'piss'];
+
     return(
         <Background>
-            <DropdownButton text="OVER RICE"/>
+            <DropdownButton text="Produkter" $categories={ cat }/>
         </Background>
     );
 }
