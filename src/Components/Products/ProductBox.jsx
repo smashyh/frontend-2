@@ -39,7 +39,7 @@ font-size: 1.10rem;
 color: black;
 `;
 
-function ProductsPage(){
+function ProductsBox(){
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -67,7 +67,7 @@ function ProductsPage(){
             <div>
                 {products.map((product)=> (
                     <ProductBox key={product.id}>
-                        <ProductImg src={product.image} alt={product.name}/>
+                        <ProductImg src={product.img} alt={product.name}/>
                         <ProductContent>
                             <ProductTitle>{product.name}</ProductTitle>
                             <ProductDescription>{product.description}</ProductDescription>
@@ -80,4 +80,4 @@ function ProductsPage(){
     );
 }
 
-export default ProductsPage;
+export default ProductsBox
