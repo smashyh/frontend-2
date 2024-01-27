@@ -59,25 +59,4 @@ function ProductsBox(){
             console.error('Error Getting Products', error);
         }
     };
-
-
-    return (
-        <div>
-            <h2>Our Products</h2>
-            <div>
-                {products.map((product)=> (
-                    <ProductBox key={product.id}>
-                        <ProductImg src={product.img} alt={product.name}/>
-                        <ProductContent>
-                            <ProductTitle>{product.name}</ProductTitle>
-                            <ProductDescription>{product.description}</ProductDescription>
-                            <ProductPrice>${product.price}</ProductPrice>
-                        </ProductContent>
-                    </ProductBox>
-                ))}
-            </div>
-        </div>
-    );
 }
-
-export default ProductsBox
