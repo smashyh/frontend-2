@@ -2,6 +2,10 @@ import styled from "styled-components";
 import React, { useState, useEffect } from 'react';
 import DropdownItem from "./DropdownItem";
 
+const Wrapper = styled.div`
+    margin: auto;
+`;
+
 const Background = styled.div`
     //font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-family: system-ui, Helvetica;
@@ -32,11 +36,6 @@ function DropdownButton(props)
     //     categoryElements.push(<DropdownItem key={props.$categories[i].toString()} categoryName={ props.$categories[i].toString() }/>);
     // }
 
-    if (toggle)
-    {
-        
-    }
-
     useEffect(() =>
     {
         const tempArr = [];
@@ -55,12 +54,13 @@ function DropdownButton(props)
     const listItems = dropdownLabels.map(label => <DropdownItem key={ label.id } $categoryName={ label.category }/>);
 
     return(
-        <Background onClick={() => setToggle(!toggle)} $toggle={ toggle }>
-            { props.text }
-            {
-                toggle && listItems
-            }
-        </Background>
+        <Wrapper>
+            <Background onClick={() => setToggle(!toggle)} $toggle={ toggle }>
+                { props.text }
+            </Background>
+            { toggle && listItems }
+        </Wrapper>
+
     );
 }
 

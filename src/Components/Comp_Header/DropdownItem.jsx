@@ -8,7 +8,8 @@ const Background = styled.div`
     align-items: center;
     justify-content: space-around;
     width: 128px;
-    height: 84px;
+    height: 64px;
+    background-position-y: 96px;
     background-color: ${ props => props.$toggle ? "#1b552c" : "#2a8545" };
     cursor: pointer;
     &:hover
