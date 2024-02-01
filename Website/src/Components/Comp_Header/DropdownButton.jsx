@@ -2,9 +2,7 @@ import styled from "styled-components";
 import React, { useState, useEffect } from 'react';
 import DropdownItem from "./DropdownItem";
 
-const Wrapper = styled.div`
-    margin: auto;
-`;
+const Wrapper = styled.div`margin: auto;`;
 
 const Background = styled.div`
     display: flex;
@@ -58,6 +56,5 @@ export default function DropdownButton(props)
             </Background>
             { toggle && listItems }
         </Wrapper>
-
     );
 }

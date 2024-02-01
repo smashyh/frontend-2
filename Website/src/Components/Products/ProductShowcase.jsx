@@ -37,8 +37,6 @@ export default function ProductShowcase(props)
 
             const data = await axios.get(strapiURL + '/api/products?populate=*' + props.$filter, config);
             
-            
-
             const tempArr = [];
              
             data.data.data.forEach(item => 
@@ -56,7 +54,7 @@ export default function ProductShowcase(props)
 
             setProducts([...products, ...tempArr]);
         }
-        console.log("me fire wance");
+        
         fetchData();
     }, []);
 
