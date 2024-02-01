@@ -36,14 +36,6 @@
       "type": "uid",
       "required": true
     },
-    "category": {
-      "type": "enumeration",
-      "enum": [
-        "T-Shirt",
-        "Pants",
-        "Jacket"
-      ]
-    },
     "date_added": {
       "type": "date"
     },
