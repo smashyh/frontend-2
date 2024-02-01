@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import DropdownButton from "./DropdownButton.jsx"
 import HeaderButton from "./HeaderButton.jsx";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
 
@@ -23,19 +24,31 @@ const Background = styled.div`
 function Header()
 {
     // todo: return logo, menu, and account/shopping cart logo
-    var cat = ['shit', 'piss'];
+    var cat = ['Skor', 'Hoodies', 'Byxor'];
 
     return(
         <Wrapper>
             <Background>
                 <div style={{marginLeft: '64px'}}/>
+
+
+                <Link to='/'>
+                    <HeaderButton text='Hem'/>
+                </Link>
+                
                 <DropdownButton text="Produkter" $categories={ cat }/>
-                <HeaderButton text="Om oss 1"/>
+                <HeaderButton text="Placeholder"/>
                 
                 <div style={{ display: "flex", flexDirection: "row", width: '100%', }}/>
-
-                <HeaderButton text="Om oss 2"/>
-                <HeaderButton text="Om oss 3"/>
+                
+                <Link to='/info'>
+                    <HeaderButton text="Om oss"/>
+                </Link>
+                
+                <Link to='/contact'>
+                    <HeaderButton text="Kontakta oss"/>
+                </Link>
+                
                 <div style={{marginRight: '64px'}}/>
 
             </Background>
