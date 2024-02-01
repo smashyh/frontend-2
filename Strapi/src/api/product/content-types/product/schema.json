@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "short_description": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "product_id": {
+      "type": "uid",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "T-Shirt",
+        "Pants",
+        "Jacket"
+      ]
+    },
+    "date_added": {
+      "type": "date"
+    },
+    "long_description": {
+      "type": "text"
+    },
+    "is_new": {
+      "type": "boolean"
+    }
+  }
+}

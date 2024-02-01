@@ -1,6 +1,16 @@
+:root
+{
+    --bannerColor: #2a8545;
+    --bannerHoverColor: #1b552c;
+    --bannerPressedColor: #143d20;
+    --bannerPressedHoverColor: #0e2b16;
+}
+
 body
 {
   margin: 0;
+  white-space: break-word;
+  font-family: system-ui, Helvetica;
 }
 
 /* :root {

@@ -2,24 +2,22 @@ import styled from "styled-components";
 import React, { useState } from 'react';
 
 const Background = styled.div`
-    //font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-family: system-ui, Helvetica;
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 128px;
     height: 64px;
-    background-position-y: 96px;
-    background-color: ${ props => props.$toggle ? "#1b552c" : "#2a8545" };
+    position: relative;
     cursor: pointer;
+    background-color: ${ props => props.$toggle ? "var(--bannerPressedColor)" : "var(--bannerColor)" };
     &:hover
     {
-        background-color: ${ props => props.$toggle ? "#0f3119" : "#1a522a" };
+        background-color: ${ props => props.$toggle ? "var(--bannerPressedHoverColor)" : "var(--bannerHoverColor)" };
     }
     color: white;
 `;
 
-function DropdownItem(props)
+export default function DropdownItem(props)
 {
     const [toggle, setToggle] = useState(false);
 
@@ -28,6 +26,4 @@ function DropdownItem(props)
             { props.$categoryName }
         </Background>
     );
-}//// onClick={() => setToggle(!toggle)} $toggle={ toggle }
-
-export default DropdownItem
+}// onClick={() => setToggle(!toggle)} $toggle={ toggle }

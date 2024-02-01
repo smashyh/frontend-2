@@ -7,24 +7,22 @@ const Wrapper = styled.div`
 `;
 
 const Background = styled.div`
-    //font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-family: system-ui, Helvetica;
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 128px;
     height: 84px;
-    background-color: ${ props => props.$toggle ? "#1b552c" : "#2a8545" };
     cursor: pointer;
+    background-color: ${ props => props.$toggle ? "var(--bannerPressedColor)" : "var(--bannerColor)" };
     &:hover
     {
-        background-color: ${ props => props.$toggle ? "#0f3119" : "#1a522a" };
+        background-color: ${ props => props.$toggle ? "var(--bannerPressedHoverColor)" : "var(--bannerHoverColor)" };
     }
     color: white;
 `;
 
 
-function DropdownButton(props)
+export default function DropdownButton(props)
 {
     const [dropdownLabels, setDropdownLabels] = useState([]);
     const [toggle, setToggle] = useState(false);
@@ -34,8 +32,8 @@ function DropdownButton(props)
     // {
     //     //<DropdownItem categoryName={ props.$categories[i].toString() }/>
     //     categoryElements.push(<DropdownItem key={props.$categories[i].toString()} categoryName={ props.$categories[i].toString() }/>);
-    // }
-
+    // }´
+    
     useEffect(() =>
     {
         const tempArr = [];
@@ -63,5 +61,3 @@ function DropdownButton(props)
 
     );
 }
-
-export default DropdownButton
