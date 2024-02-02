@@ -38,7 +38,7 @@ export default function ProductShowcase(props)
             const data = await axios.get(strapiURL + '/api/products?populate=*' + props.$filter, config);
             
             const tempArr = [];
-             
+            
             data.data.data.forEach(item => 
             {
                 tempArr.push
@@ -50,6 +50,7 @@ export default function ProductShowcase(props)
                     price: item.attributes.price,
                     productId: item.attributes.product_id,
                 });
+                
             });
 
             setProducts([...products, ...tempArr]);

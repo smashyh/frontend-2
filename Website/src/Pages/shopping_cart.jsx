@@ -1,22 +1,21 @@
 import styled from "styled-components";
+import TextBanner from "../Components/Banners/TextBanner";
 import Header from "../Components/Comp_Header/Header";
 import ImageBanner from "../Components/Banners/ImageBanner";
-import TextBanner from "../Components/Banners/TextBanner";
-import ProductShowcase  from "../Components/Products/ProductShowcase";
+import ShoppingCartReview from "../Components/ShoppingCartRelated/ShoppingCartReview";
 
 const Wrapper = styled.div`
     
 `;
 
-export default function Home() 
+export default function ShoppingCartPage() 
 {
     return(
         <Wrapper>
             <Header/>
             <ImageBanner $image="Media/Images/foob.jpg"/>
-            <TextBanner>Nya produkter</TextBanner>
-            <ProductShowcase $filter='&filters[is_new][$eq]=true'/>
+            <TextBanner>Din kundvagn</TextBanner>
+            <ShoppingCartReview/>
         </Wrapper>
     );
-    
-}
+} 

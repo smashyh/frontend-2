@@ -2,6 +2,7 @@ import styled from "styled-components";
 import DropdownButton from "./DropdownButton.jsx"
 import HeaderButton from "./HeaderButton.jsx";
 import { Link } from "react-router-dom";
+import ShoppingCartButton from "./ShoppingCartButton.jsx";
 
 const Wrapper = styled.div`
 
@@ -31,7 +32,6 @@ function Header()
             <Background>
                 <div style={{marginLeft: '64px'}}/>
 
-
                 <Link to='/'>
                     <HeaderButton text='Hem'/>
                 </Link>
@@ -41,13 +41,9 @@ function Header()
                 
                 <div style={{ display: "flex", flexDirection: "row", width: '100%', }}/>
                 
-                <Link to='/info'>
-                    <HeaderButton text="Om oss"/>
-                </Link>
-                
-                <Link to='/contact'>
-                    <HeaderButton text="Kontakta oss"/>
-                </Link>
+                <Link to='/info'><HeaderButton text="Om oss"/></Link>
+                <Link to='/contact'><HeaderButton text="Kontakta oss"/></Link>
+                <ShoppingCartButton/>
                 
                 <div style={{marginRight: '64px'}}/>
 

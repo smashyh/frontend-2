@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import React, { useState } from 'react';
 
 const ProductBoxStyle = styled.div`
 width: 256px;
