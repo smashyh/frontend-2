@@ -3,6 +3,7 @@ import DropdownButton from "./DropdownButton.jsx"
 import HeaderButton from "./HeaderButton.jsx";
 import { Link } from "react-router-dom";
 import ShoppingCartButton from "./ShoppingCartButton.jsx";
+import { useEffect } from "react";
 
 const Wrapper = styled.div`
 
@@ -26,7 +27,7 @@ function Header()
 {
     // todo: return logo, menu, and account/shopping cart logo
     var cat = ['Skor', 'Hoodies', 'Byxor'];
-
+    
     return(
         <Wrapper>
             <Background>
@@ -43,7 +44,7 @@ function Header()
                 
                 <Link to='/info'><HeaderButton text="Om oss"/></Link>
                 <Link to='/contact'><HeaderButton text="Kontakta oss"/></Link>
-                <ShoppingCartButton/>
+                <Link to='/shopping_cart'><ShoppingCartButton/></Link>
                 
                 <div style={{marginRight: '64px'}}/>
 
