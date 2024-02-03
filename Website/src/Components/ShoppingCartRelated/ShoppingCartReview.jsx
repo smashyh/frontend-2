@@ -12,6 +12,24 @@ const Wrapper = styled.div`
     align-items: center;
 `;
 
+const CheckoutButton = styled.button`
+    font-family: system-ui, Helvetica;
+    font-size: 1.10rem;
+    border-width: 0;
+    background-color: var(--bannerColor);
+    color: #FFFFFF;
+    width: 192px;
+    height: 48px;
+    cursor: pointer;
+    background-color: var(--bannerColor);
+    &:hover
+    {
+        background-color: var(--bannerHoverColor);
+    }
+    //--bannerColor: #2a8545;
+    //--bannerHoverColor: #1b552c;
+`;
+
 const strapiURL = 'http://localhost:1337';
 
 const localStorageCartName = 'temp_cart';
@@ -94,6 +112,18 @@ export default function ShoppingCartReview()
     //     f();
     // }, [])
 
+    // Shopping cart is empty, can't show items or pay
+    if (shoppingCart.length == 0)
+    {
+        return(
+            <Wrapper>
+                <div style={{marginLeft: '10%', marginTop: '32px'}}/>
+                <div>Din kundvagn är tom.</div>
+                <div style={{marginRight: '10%'}}/>
+            </Wrapper>
+        );
+    }
+
     return(
         <Wrapper>
             <div style={{marginLeft: '10%'}}/>
@@ -101,19 +131,19 @@ export default function ShoppingCartReview()
                 shoppingCart.map(item => <ShoppingCartItem
                     key={ item.id }
                     $onClick={ () => removeFunction(item.id) }
-                    // $name={ product.name }
-                    // $image={ product.image }
+                    $name={ item.name }
+                    $image={ item.image }
                     // $description={ product.description }
-                    // $price={ product.price }
+                    $price={ item.price }
                     //$productId={ product.productId }
                 />)
             }
-            {/* <ShoppingCartItem />
-            <ShoppingCartItem $onClick={ () => removeFunction(0) }/>
-            <ShoppingCartItem $onClick={ () => removeFunction(0) }/>
-            <ShoppingCartItem $onClick={ () => removeFunction(0) }/>
-            <ShoppingCartItem $onClick={ () => removeFunction(0) }/> */}
+
+            <div style={{marginTop: '32px'}}/>
+
+            <CheckoutButton>Betala</CheckoutButton>
             <div style={{marginRight: '10%'}}/>
         </Wrapper>
     );
+
 }

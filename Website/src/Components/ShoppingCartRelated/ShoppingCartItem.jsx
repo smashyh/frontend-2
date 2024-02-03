@@ -75,15 +75,15 @@ export default function ShoppingCartItem(props)
             <div style={{ marginLeft: "5%" }}/>
             
             <div>
-            <CartItemImg src="./Media/Images/adidas.webp"/>
+            <CartItemImg src={props.$image}/>
             </div>
 
             <div style={{ marginRight: "5%" }}/>
 
-            <CartItemTitle>Adidas T-Shirt Storlek M</CartItemTitle>
+            <CartItemTitle>{props.$name}</CartItemTitle>
 
             <div style={{ display: "flex", flexDirection: "row", width: '100%', }}/>
-            <CartItemPrice>250kr</CartItemPrice>
+            <CartItemPrice>{props.$price}kr</CartItemPrice>
 
             <div style={{ marginRight: "5%" }}/>
 
