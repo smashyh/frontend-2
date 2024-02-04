@@ -68,7 +68,7 @@ export default function ProductShowcase(props)
                     $image={ product.image }
                     $description={ product.description }
                     $price={ product.price }
-                    //$productId={ product.productId }
+                    $productId={ product.productId }
                 />)
             }
         </ProductContainer>

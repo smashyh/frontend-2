@@ -6,7 +6,7 @@ import Info from "./Pages/info";
 import Contact from "./Pages/contact";
 import Products from "./Pages/products";
 import ShoppingCartPage from "./Pages/shopping_cart";
-
+import ProductPage from "./Pages/product";
 
 function App() 
 {
@@ -17,6 +17,7 @@ function App()
         <Route path='/info' element={<Info/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/products' element={<Products/>}/>
+        <Route path='/product/:productID' element={<ProductPage/>}/>
         <Route path='/shopping_cart' element={<ShoppingCartPage/>}/>
         </Routes>
         </div>

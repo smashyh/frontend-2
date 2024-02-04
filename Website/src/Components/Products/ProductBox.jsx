@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const ProductBoxStyle = styled.div`
 width: 256px;
@@ -43,17 +44,19 @@ color: black;
 
 /**
 *   Properties:
-*   $image, $name, $description, $price, $id
+*   $image, $name, $description, $price, $productId
 */
 export default function ProductBox(props)
 {
     return(
+        <Link to={ "/product/" + props.$productId }>
         <ProductBoxStyle>
             <ProductImg src={ props.$image }/>
             <ProductTitle>{ props.$name }</ProductTitle>
             <ProductDescription>{ props.$description }</ProductDescription>
             <ProductPrice>{ props.$price }kr</ProductPrice>
         </ProductBoxStyle>
+        </Link>
     );
 }
 
