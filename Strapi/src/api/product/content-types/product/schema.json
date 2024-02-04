@@ -44,6 +44,9 @@
     },
     "is_new": {
       "type": "boolean"
+    },
+    "in_stock": {
+      "type": "integer"
     }
   }
 }
