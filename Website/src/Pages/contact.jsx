@@ -12,19 +12,39 @@ const Wrapper = styled.div`
 
 const ContactContainer = styled.div`
     display: flex;
-    margin: 0 20%; 
+    margin: 10% 20%; 
     justify-content: center;
     align-items: center;
 `;
 
 
 const ContactCard = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: solid 1px;
     border-color: black;
     padding: 1rem;
     margin: 8px;
     width: 33%;
     text-align: center;
+
+    svg {
+        font-size: 5em;
+        margin-bottom: 3rem;
+    }
+    button {
+        font-size: 1rem;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        background-color: black;
+        border: none;
+        padding: 0.8rem 6rem;
+    }
+    button:hover {
+        cursor: pointer;
+        background-color: #4e4e4e;
+    }
 `;
 
 export default function Contact() {
@@ -33,9 +53,25 @@ export default function Contact() {
             <Header/>
             <TextBanner>Kontaktinfo</TextBanner>
             <ContactContainer>
-                <ContactCard>Chat<AiFillWechat /></ContactCard>
-                <ContactCard>Email<LiaTelegramPlane /></ContactCard>
-                <ContactCard>Call<AiFillPhone /></ContactCard>
+
+                <ContactCard>
+                <AiFillWechat />
+                <button>Chatta Med Oss</button>
+                <p>Mån - Sön 24/7</p>
+                </ContactCard>
+
+                <ContactCard>
+                <LiaTelegramPlane />
+                <button>Maila Oss</button>
+                <p>Maila oss så hör vi av oss så fort vi kan!</p>
+                </ContactCard>
+
+                <ContactCard>
+                <AiFillPhone />
+                <button>Ring Oss</button>
+                <p>Mån - Lör 8 - 16</p>
+                </ContactCard>
+
             </ContactContainer>
         </Wrapper>
     );
