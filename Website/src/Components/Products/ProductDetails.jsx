@@ -18,6 +18,7 @@ const ProductDivider = styled.div`
 const ProductInfoDivider = styled.div`
     padding-left: 64px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
 `;
 
@@ -113,9 +114,22 @@ export default function ProductDetails(props)
 
             const data = await axios.get(strapiURL + `/api/products?populate=*&filters[product_id][$eq]=${props.$productID}`, config);
             //const data = await axios.get(strapiURL + `/api/products?populate=*&filters[product_id][$eq]=${cart[i]}`, config);
-
+            
             const item = data.data.data[0];
-            console.log(item)
+            if (item === undefined)
+            {
+                setProduct
+                ({
+                    id: -2,//i,//item.id,
+                    name: "",//item.attributes.name,
+                    image: "",//strapiURL + item.attributes.photos.data[0].attributes.url, 
+                    description: "",//item.attributes.short_description,
+                    price: "",//item.attributes.price,
+                    inStock: 0,
+                });
+                return;
+            }
+            
             setProduct
             ({
                 id: 0,//item.id,
@@ -125,15 +139,24 @@ export default function ProductDetails(props)
                 price: item.attributes.price,
                 inStock: item.attributes.in_stock,
             });
-
-            
         }
         
         fetchData();
 
     }, []);
 
-    console.log(product.inStock);
+    // Undefined case: product couldn't be found
+    if (product.id == -2)
+    {
+        return(
+            <Wrapper>
+                <TextBanner></TextBanner>
+                <div style={{ textAlign: "center" }}>
+                    <ProductDescription>Fel: Produkten kunde inte hittas.</ProductDescription>
+                </div>
+            </Wrapper>
+        );
+    }
 
     if (product.inStock == 0)
     {

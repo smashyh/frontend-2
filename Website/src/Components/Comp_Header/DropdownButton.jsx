@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import DropdownItem from "./DropdownItem";
 
 const Wrapper = styled.div`margin: auto;`;
@@ -22,32 +23,30 @@ const Background = styled.div`
 
 export default function DropdownButton(props)
 {
-    const [dropdownLabels, setDropdownLabels] = useState([]);
+    //const [dropdownLabels, setDropdownLabels] = useState([]);
     const [toggle, setToggle] = useState(false);
 
-    // var categoryElements = [];
-    // for (var i = 0; i < props.$categories.length; i++)
-    // {
-    //     //<DropdownItem categoryName={ props.$categories[i].toString() }/>
-    //     categoryElements.push(<DropdownItem key={props.$categories[i].toString()} categoryName={ props.$categories[i].toString() }/>);
-    // }´
+    var dropdownLabels = [];
     
-    useEffect(() =>
+    for (let i = 0; i < props.$categories.length; i++)
     {
-        const tempArr = [];
-        for (let i = 0; i < props.$categories.length; i++)
-        {
-            tempArr.push
-            ({
-                id: i,
-                category: props.$categories[i],
-            })
-        }
+        dropdownLabels.push
+        ({
+            id: i,
+            category: props.$categories[i].label,
+            path: props.$categories[i].path
+        })
+        // tempArr.push
+        // ({
+        //     id: i,
+        //     category: props.$categories[i].name,
+        // })
+    }
 
-        setDropdownLabels([...dropdownLabels, ...tempArr]);
-    }, []);
-
-    const listItems = dropdownLabels.map(label => <DropdownItem key={ label.id } $categoryName={ label.category }/>);
+    const listItems = dropdownLabels.map(label => 
+        <Link key={ label.id } to={ label.path } reloadDocument>
+            <DropdownItem key={ label.id } $categoryName={ label.category } />
+        </Link>);
 
     return(
         <Wrapper>

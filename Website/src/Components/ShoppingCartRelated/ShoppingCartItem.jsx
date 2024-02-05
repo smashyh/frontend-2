@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div``;
 
@@ -74,13 +75,17 @@ export default function ShoppingCartItem(props)
         <CartItemStyle>
             <div style={{ marginLeft: "5%" }}/>
             
+            <Link to={"/product/" + props.$productID}>
             <div>
             <CartItemImg src={props.$image}/>
             </div>
-
+            </Link>
+            
             <div style={{ marginRight: "5%" }}/>
 
-            <CartItemTitle>{props.$name}</CartItemTitle>
+            <Link to={"/product/" + props.$productID}>
+                <CartItemTitle>{props.$name}</CartItemTitle>
+            </Link>
 
             <div style={{ display: "flex", flexDirection: "row", width: '100%', }}/>
             <CartItemPrice>{props.$price}kr</CartItemPrice>

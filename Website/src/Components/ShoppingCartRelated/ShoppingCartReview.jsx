@@ -101,17 +101,6 @@ export default function ShoppingCartReview()
         }
     };
 
-    // const f = () =>
-    // {
-    //     const array = ["adidas-t-shirt-storlek-m", "adidas-t-shirt-storlek-m", "adidas-t-shirt-storlek-m", "adidas-t-shirt-storlek-m"];
-    //     localStorage.setItem('temp_cart', JSON.stringify(array));
-    // }
-
-    // useEffect(() => 
-    // {
-    //     f();
-    // }, [])
-
     // Shopping cart is empty, can't show items or pay
     if (shoppingCart.length == 0)
     {
@@ -135,7 +124,7 @@ export default function ShoppingCartReview()
                     $image={ item.image }
                     // $description={ product.description }
                     $price={ item.price }
-                    //$productId={ product.productId }
+                    $productID={ item.productId }
                 />)
             }
 

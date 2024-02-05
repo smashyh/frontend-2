@@ -9,9 +9,6 @@ const Wrapper = styled.div``;
 export default function ProductPage(props)
 {
     const { productID } = useParams();
-
-    console.log(productID);
-
     return(
         <Wrapper>
             <Header/>
