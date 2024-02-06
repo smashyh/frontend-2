@@ -8,6 +8,10 @@ import Products from "./Pages/products";
 import ShoppingCartPage from "./Pages/shopping_cart";
 import ProductPage from "./Pages/product";
 import PaymentPage from "./Pages/payment";
+import CustomerService from "./Pages/CustomerService";
+import Delivery from "./Pages/Delivery";
+import Returns from "./Pages/Returns";
+import Terms from "./Pages/Terms";
 
 function App() 
 {
@@ -21,6 +25,10 @@ function App()
         <Route path='/product/:productID' element={<ProductPage/>}/>
         <Route path='/shopping_cart' element={<ShoppingCartPage/>}/>
         <Route path='/payment' element={<PaymentPage/>}/>
+        <Route path='/customer-service' element={<CustomerService/>}/>
+        <Route path='/delivery' element={<Delivery/>}/>
+        <Route path='/returns' element={<Returns/>}/>
+        <Route path='/terms' element={<Terms/>}/>
         </Routes>
         </div>
     );

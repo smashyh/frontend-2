@@ -22,8 +22,8 @@ const ContactCard = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid 1px;
-    border-color: black;
+    border-radius: 8px;
+    background-color: #f0f0f0;
     padding: 1rem;
     margin: 8px;
     width: 33%;
@@ -68,7 +68,7 @@ export default function Contact() {
 
                 <ContactCard>
                 <AiFillPhone />
-                <button>Ring Oss</button>
+                <button>033-14 00 10</button>
                 <p>Mån - Lör 8 - 16</p>
                 </ContactCard>
 
