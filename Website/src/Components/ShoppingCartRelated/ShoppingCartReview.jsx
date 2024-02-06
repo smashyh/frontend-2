@@ -37,6 +37,7 @@ const localStorageCartName = 'temp_cart';
 export default function ShoppingCartReview()
 {
     const [shoppingCart, setShoppingCart] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() =>
     {
@@ -50,6 +51,7 @@ export default function ShoppingCartReview()
             }
 
             const tempArr = [];
+            let price = 0;
             
             const config = 
             {
@@ -77,9 +79,11 @@ export default function ShoppingCartReview()
                     price: item.attributes.price,
                     productId: item.attributes.product_id,
                 });
-                
+
+                price += item.attributes.price;
             }
 
+            setTotalPrice(price);
             setShoppingCart([...shoppingCart, ...tempArr]);
         }
         
@@ -129,6 +133,8 @@ export default function ShoppingCartReview()
             }
 
             <div style={{marginTop: '32px'}}/>
+
+            <h2>Att betala: { totalPrice }kr</h2>
 
             <CheckoutButton>Betala</CheckoutButton>
             <div style={{marginRight: '10%'}}/>

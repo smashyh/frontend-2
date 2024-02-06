@@ -7,6 +7,7 @@ import Contact from "./Pages/contact";
 import Products from "./Pages/products";
 import ShoppingCartPage from "./Pages/shopping_cart";
 import ProductPage from "./Pages/product";
+import PaymentPage from "./Pages/payment";
 
 function App() 
 {
@@ -19,6 +20,7 @@ function App()
         <Route path='/products/:category' element={<Products/>}/>
         <Route path='/product/:productID' element={<ProductPage/>}/>
         <Route path='/shopping_cart' element={<ShoppingCartPage/>}/>
+        <Route path='/payment' element={<PaymentPage/>}/>
         </Routes>
         </div>
     );
