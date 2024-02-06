@@ -35,7 +35,7 @@ export default function Terms() {
   return (
     <Wrapper>
       <Header />
-      <TextBanner>Köpvillkor</TextBanner>
+      <TextBanner><h2>Köpvillkor</h2></TextBanner>
 
       <SectionWrapper>
         <h2>Allmänna Villkor</h2>

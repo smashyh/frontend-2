@@ -54,7 +54,7 @@ export default function Home()
         <Wrapper>
             <Header/>
             <ImageBanner $image="Media/Images/foob.jpg"/>
-            <TextBanner>Nya produkter</TextBanner>
+            <TextBanner><h2>Nya produkter</h2></TextBanner>
             <ProductShowcase $products={ products } />
         </Wrapper>
     );

@@ -67,7 +67,7 @@ export default function Delivery() {
     return(
         <Wrapper>
             <Header/>
-            <TextBanner>Leveransinfo</TextBanner>
+            <TextBanner><h2>Leverans</h2></TextBanner>
             <TextCard>
                 <h3>Leveranstider</h3>
                 <p>Vår standardleverans är mellan 2-4 arbetsdagar. Vänligen notera att under högsäsong och rea kan leveransen av ditt paket ta längre tid. 
@@ -82,9 +82,17 @@ export default function Delivery() {
                 <button><FaSearch />Spåra</button>
                 </InputBox>
             </TextCard>
+
+            <TextCard>
+            <h3>Postombud</h3>
+            <p>Vi samarbetar med Postnord för våra leveranser och returer. 
+                Undrar du mer angående leveranssätt samt paketspårning besök Postnord <StyledLink to='https://www.postnord.se/'>här</StyledLink>.
+            </p>
+            </TextCard>
+            
             <QuestionCard> 
-                <h5>Fick du inte svar på det du undrade?</h5>
-                <p>Kontakta oss <StyledLink to='/contact'>här</StyledLink></p>
+                <p>Har du frågor eller behöver ytterligare information?</p>
+                <p>Kontakta oss <StyledLink to='/contact'>här</StyledLink>.</p>
                 
             </QuestionCard>
         </Wrapper>

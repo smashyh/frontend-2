@@ -51,7 +51,7 @@ export default function Contact() {
     return(
         <Wrapper>
             <Header/>
-            <TextBanner>Kontaktinfo</TextBanner>
+            <TextBanner><h2>Kontaktinfo</h2></TextBanner>
             <ContactContainer>
 
                 <ContactCard>
