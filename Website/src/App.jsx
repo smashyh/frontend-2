@@ -7,6 +7,10 @@ import Contact from "./Pages/contact";
 import Products from "./Pages/products";
 import ShoppingCartPage from "./Pages/shopping_cart";
 import ProductPage from "./Pages/product";
+import CustomerService from "./Pages/CustomerService";
+import Delivery from "./Pages/Delivery";
+import Returns from "./Pages/Returns";
+import Terms from "./Pages/Terms";
 
 function App() 
 {
@@ -19,6 +23,10 @@ function App()
         <Route path='/products/:category' element={<Products/>}/>
         <Route path='/product/:productID' element={<ProductPage/>}/>
         <Route path='/shopping_cart' element={<ShoppingCartPage/>}/>
+        <Route path='/customer-service' element={<CustomerService/>}/>
+        <Route path='/delivery' element={<Delivery/>}/>
+        <Route path='/returns' element={<Returns/>}/>
+        <Route path='/terms' element={<Terms/>}/>
         </Routes>
         </div>
     );

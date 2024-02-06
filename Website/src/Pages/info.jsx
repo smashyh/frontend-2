@@ -19,7 +19,7 @@ const OwnerSection = styled.div`
     max-width: 400px;
     margin: 20px;
     padding: 20px;
-    background-color: #f8f8f8;
+    background-color: #f0f0f0;
     border-radius: 8px;
 `;
 
@@ -27,7 +27,7 @@ const CompanyHistorySection = styled.div`
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f8f8f8;
+    background-color: #f0f0f0;
     border-radius: 8px;
 `;
 
@@ -35,7 +35,7 @@ const OurVisionSection = styled.div`
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f8f8f8;
+    background-color: #f0f0f0;
     border-radius: 8px;
 `;
 

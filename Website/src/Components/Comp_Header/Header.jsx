@@ -23,6 +23,12 @@ const Background = styled.div`
     color: white;
 `;
 
+const StyledLink = styled(Link)`
+
+    text-decoration: none;
+    color: inherit;
+`;
+
 const strapiURL = 'http://localhost:1337';
 
 function CategoryDropdownButton(props)
@@ -65,18 +71,18 @@ function Header()
             <Background>
                 <div style={{marginLeft: '64px'}}/>
 
-                <Link to='/'>
+                <StyledLink to='/'>
                     <HeaderButton text='Hem'/>
-                </Link>
+                </StyledLink>
                 
                 <CategoryDropdownButton text="Produkter"/>
-                <HeaderButton text="Placeholder"/>
+                <StyledLink to='/customer-service'><HeaderButton text="Kundservice"/></StyledLink>
                 
                 <div style={{ display: "flex", flexDirection: "row", width: '100%', }}/>
                 
-                <Link to='/info'><HeaderButton text="Om oss"/></Link>
-                <Link to='/contact'><HeaderButton text="Kontakta oss"/></Link>
-                <Link to='/shopping_cart'><ShoppingCartButton/></Link>
+                <StyledLink to='/info'><HeaderButton text="Om oss"/></StyledLink>
+                <StyledLink to='/contact'><HeaderButton text="Kontakta oss"/></StyledLink>
+                <StyledLink to='/shopping_cart'><ShoppingCartButton/></StyledLink>
                 
                 <div style={{marginRight: '64px'}}/>
 
