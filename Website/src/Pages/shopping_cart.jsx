@@ -14,7 +14,7 @@ export default function ShoppingCartPage()
         <Wrapper>
             <Header/>
             <ImageBanner $image="Media/Images/foob.jpg"/>
-            <TextBanner>Din kundvagn</TextBanner>
+            <TextBanner><h2>Din kundvagn</h2></TextBanner>
             <ShoppingCartReview/>
         </Wrapper>
     );

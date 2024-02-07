@@ -67,7 +67,7 @@ export default function CustomerService() {
     return(
         <Wrapper>
             <Header/>
-            <TextBanner>Kundservice</TextBanner>
+            <TextBanner><h2>Kundservice</h2></TextBanner>
             <TextCard> 
                 <h2>Välkommen till kundservice!</h2>
                 <h3>Här hittar du svar på de vanligaste frågorna</h3>
@@ -91,8 +91,8 @@ export default function CustomerService() {
 
             </ServiceContainer>
             <QuestionCard> 
-                <h5>Fick du inte svar på det du undrade?</h5>
-                <p>Kontakta oss <StyledLink to='/contact'>här</StyledLink></p>
+                <p>Fick du inte svar på det du undrade?</p>
+                <p>Kontakta oss <StyledLink to='/contact'>här</StyledLink>.</p>
                 
             </QuestionCard>
         </Wrapper>

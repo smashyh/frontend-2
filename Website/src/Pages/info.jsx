@@ -43,7 +43,7 @@ export default function Info() {
     return (
         <Wrapper>
             <Header />
-            <TextBanner>Om oss</TextBanner>
+            <TextBanner><h2>Om Oss</h2></TextBanner>
 
             <OwnersWrapper>
                 <OwnerSection>
