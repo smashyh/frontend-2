@@ -13,7 +13,6 @@ export default function ShoppingCartPage()
     return(
         <Wrapper>
             <Header/>
-            <ImageBanner $image={import.meta.env.VITE_STRAPI_URL + "/uploads/foob_c9ef7b563a.jpg"}/>
             <TextBanner><h2>Din kundvagn</h2></TextBanner>
             <ShoppingCartReview/>
         </Wrapper>

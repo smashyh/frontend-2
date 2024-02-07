@@ -10,6 +10,13 @@ const Wrapper = styled.div`
     
 `;
 
+const ProductWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+
 export default function Home() 
 {
     const [products, setProducts] = useState([]);
@@ -51,9 +58,11 @@ export default function Home()
     return(
         <Wrapper>
             <Header/>
-            <ImageBanner $image={ import.meta.env.VITE_STRAPI_URL + "/uploads/foob_c9ef7b563a.jpg" }/>
             <TextBanner><h2>Nya produkter</h2></TextBanner>
+            <ProductWrap>
             <ProductShowcase $products={ products } />
+            </ProductWrap>
+            
         </Wrapper>
     );
     

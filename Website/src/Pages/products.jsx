@@ -12,6 +12,12 @@ const Wrapper = styled.div`
     
 `;
 
+const ProductWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 const ProductDescription = styled.p`
 font-family: system-ui, Helvetica;
 font-size: 1rem;
@@ -74,7 +80,6 @@ export default function Products()
         return(
             <Wrapper>
                 <Header/>
-                <ImageBanner $image={import.meta.env.VITE_STRAPI_URL + "/uploads/foob_c9ef7b563a.jpg"}/>
                 <TextBanner></TextBanner>
                 <div style={{ textAlign: "center" }}>
                     <ProductDescription>Inga produkter kunde hittas i denna kategori.</ProductDescription>
@@ -86,9 +91,8 @@ export default function Products()
     return(
         <Wrapper>
             <Header/>
-            <ImageBanner $image={import.meta.env.VITE_STRAPI_URL + "/uploads/foob_c9ef7b563a.jpg"}/>
             <TextBanner>{ categoryName }</TextBanner>
-            <ProductShowcase $products={ products } />
+            <ProductWrap><ProductShowcase $products={ products } /></ProductWrap>
         </Wrapper>
     );
 

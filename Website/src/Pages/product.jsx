@@ -6,14 +6,21 @@ import ProductDetails from "../Components/Products/ProductDetails";
 
 const Wrapper = styled.div``;
 
+const ProductWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 export default function ProductPage(props)
 {
     const { productID } = useParams();
     return(
         <Wrapper>
             <Header/>
-            <ImageBanner $image={import.meta.env.VITE_STRAPI_URL + "/uploads/foob_c9ef7b563a.jpg"}/>
+            <ProductWrap>
             <ProductDetails $productID={productID}/>
+            </ProductWrap>
         </Wrapper>
     );
 }
