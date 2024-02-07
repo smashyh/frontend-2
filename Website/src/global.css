@@ -1,9 +1,9 @@
 :root
 {
     --bannerColor: #E4D8C5;
-    --bannerHoverColor: #b0b0b0;
-    --bannerPressedColor: #a0a0a0;
-    --bannerPressedHoverColor: #0e2b16;
+    --bannerHoverColor: #CDC2B1;
+    --bannerPressedColor: #B9AF9F;
+    --bannerPressedHoverColor: #A79D8F;
 }
 
 body
