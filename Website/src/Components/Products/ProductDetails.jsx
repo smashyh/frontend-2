@@ -131,7 +131,7 @@ export default function ProductDetails(props)
             ({
                 id: 0,//item.id,
                 name: item.attributes.name,
-                image: strapiURL + item.attributes.photos.data[0].attributes.url, 
+                image: import.meta.env.VITE_STRAPI_URL + item.attributes.photos.data[0].attributes.url, 
                 description: item.attributes.long_description,
                 price: item.attributes.price,
                 inStock: item.attributes.in_stock,
