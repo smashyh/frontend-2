@@ -77,7 +77,7 @@ export default function ProductBox(props)
 //             {
 //                 headers: 
 //                 {
-//                     Authorization: 'Bearer 6fa7193cc0084d157f6f4af7c991fee4719ebb65adaf31f5744a6ab40e37b374da03ef9575b82de206be55e3f2c1c6e70a396dd3c27966906bdf5f13cc79999873128b73174e632eadeb06f6179f84cf1f7933965ed2512609644ce1c171440161c5c6100001aa6b26b084937f1a27c5afc61cd19e6309f3d4b629eaa4f4da5d'
+//                     Authorization: 'Bearer b78558952db60ea2807bcd0662a595d994337755322db3215755b75b30bf7c89d54042e445176bc2a8e2a95239a2c8a13391e604b5c6c6bbb6669a340f6c362d0e3ac7eefdd37ffb45175218cc0faa64238156ae499218b236cca632fa0e1e261535f6064e1d230ae1db0b6b2518ba7e71775c3e4623531864f9539d2092dde8'
 //                 }
 //             });
 

@@ -94,11 +94,11 @@ export default function ProductDetails(props)
 {
     const [product, setProduct] = useState
     ({
-        id: -1,//i,//item.id,
-        name: "",//item.attributes.name,
-        image: "",//strapiURL + item.attributes.photos.data[0].attributes.url, 
-        description: "",//item.attributes.short_description,
-        price: "",//item.attributes.price,
+        id: -1,
+        name: "",
+        image: "",
+        description: "",
+        price: "",
         inStock: 0,
     });
 
@@ -109,22 +109,21 @@ export default function ProductDetails(props)
         {
             const config = 
             {
-                headers: { Authorization: 'Bearer e05a848cc3bf92eb2e1952bf054548150013161eb5b9a38caa774cecaad99511a3bf1f8c2fea3f421ed8b123559213c83cec4afbfefd2293d6d1f886ce790a2a3c5206c82f50824054330ae285a29cd720ebc09e1e04d1713bafc945a4b794e80723a4b9e0421fd9d7a131240f7058a5fdf26a3d05af8756af08d885616794f7' },
+                headers: { Authorization: 'Bearer b78558952db60ea2807bcd0662a595d994337755322db3215755b75b30bf7c89d54042e445176bc2a8e2a95239a2c8a13391e604b5c6c6bbb6669a340f6c362d0e3ac7eefdd37ffb45175218cc0faa64238156ae499218b236cca632fa0e1e261535f6064e1d230ae1db0b6b2518ba7e71775c3e4623531864f9539d2092dde8' },
             };
 
             const data = await axios.get(strapiURL + `/api/products?populate=*&filters[product_id][$eq]=${props.$productID}`, config);
-            //const data = await axios.get(strapiURL + `/api/products?populate=*&filters[product_id][$eq]=${cart[i]}`, config);
             
             const item = data.data.data[0];
             if (item === undefined)
             {
                 setProduct
                 ({
-                    id: -2,//i,//item.id,
-                    name: "",//item.attributes.name,
-                    image: "",//strapiURL + item.attributes.photos.data[0].attributes.url, 
-                    description: "",//item.attributes.short_description,
-                    price: "",//item.attributes.price,
+                    id: -2,
+                    name: "",
+                    image: "",
+                    description: "",
+                    price: "",
                     inStock: 0,
                 });
                 return;

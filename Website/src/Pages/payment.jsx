@@ -33,7 +33,7 @@ export default function PaymentPage()
     return(
     <Wrapper>
         <Header/>
-        <ImageBanner $image="Media/Images/foob.jpg"/>
+        <ImageBanner $image="http://localhost:1337/uploads/foob_c9ef7b563a.jpg"/>
         <TextBanner>Betalning</TextBanner>
         <PaymentForm/>
     </Wrapper>

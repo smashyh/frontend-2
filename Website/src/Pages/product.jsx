@@ -12,7 +12,7 @@ export default function ProductPage(props)
     return(
         <Wrapper>
             <Header/>
-            <ImageBanner $image="http://localhost:1337/uploads/foob_09005fa915.jpg"/>
+            <ImageBanner $image="http://localhost:1337/uploads/foob_c9ef7b563a.jpg"/>
             <ProductDetails $productID={productID}/>
         </Wrapper>
     );
