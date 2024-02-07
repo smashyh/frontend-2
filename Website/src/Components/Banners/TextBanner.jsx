@@ -8,7 +8,8 @@ const TextBanner = styled.div`
     width: 100%;
     justify-content: space-around;
     background-color: var(--bannerColor);
-    color: white;
+    color: black;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 `;
 
 export default TextBanner;

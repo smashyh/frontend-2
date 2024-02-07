@@ -12,12 +12,13 @@ const Background = styled.div`
     width: 128px;
     height: 84px;
     cursor: pointer;
+    color: black;
+    font-weight: bold;
     background-color: ${ props => props.$toggle ? "var(--bannerPressedColor)" : "var(--bannerColor)" };
     &:hover
     {
         background-color: ${ props => props.$toggle ? "var(--bannerPressedHoverColor)" : "var(--bannerHoverColor)" };
     }
-    color: white;
 `;
 
 

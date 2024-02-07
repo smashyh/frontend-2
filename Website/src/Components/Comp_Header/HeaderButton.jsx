@@ -10,11 +10,12 @@ const Background = styled.div`
     height: 84px;
     cursor: pointer;
     background-color: var(--bannerColor);
+    color: black;
+    font-weight: bold;
     &:hover
     {
         background-color: var(--bannerHoverColor);
     }
-    color: white;
 `;
 
 export default function HeaderButton(props)
