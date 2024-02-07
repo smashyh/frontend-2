@@ -30,8 +30,6 @@ const CheckoutButton = styled.button`
     //--bannerHoverColor: #1b552c;
 `;
 
-const strapiURL = 'http://localhost:1337';
-
 const localStorageCartName = 'temp_cart';
 
 export default function ShoppingCartReview()
@@ -55,12 +53,12 @@ export default function ShoppingCartReview()
             
             const config = 
             {
-                headers: { Authorization: 'Bearer b78558952db60ea2807bcd0662a595d994337755322db3215755b75b30bf7c89d54042e445176bc2a8e2a95239a2c8a13391e604b5c6c6bbb6669a340f6c362d0e3ac7eefdd37ffb45175218cc0faa64238156ae499218b236cca632fa0e1e261535f6064e1d230ae1db0b6b2518ba7e71775c3e4623531864f9539d2092dde8' },
+                headers: { Authorization: 'Bearer ' + import.meta.env.VITE_API_KEY },
             };
 
             for (let i = 0; i < cart.length; i++)
             {
-                const data = await axios.get(strapiURL + `/api/products?populate=*&filters[product_id][$eq]=${cart[i]}`, config);
+                const data = await axios.get(import.meta.env.VITE_STRAPI_URL + `/api/products?populate=*&filters[product_id][$eq]=${cart[i]}`, config);
 
                 // check if invalid item and skip if it is
                 if (data === undefined || data === null)
@@ -74,7 +72,7 @@ export default function ShoppingCartReview()
                 ({
                     id: i,//item.id,
                     name: item.attributes.name,
-                    image: strapiURL + item.attributes.photos.data[0].attributes.url, 
+                    image: import.meta.env.VITE_STRAPI_URL + item.attributes.photos.data[0].attributes.url, 
                     description: item.attributes.short_description,
                     price: item.attributes.price,
                     productId: item.attributes.product_id,

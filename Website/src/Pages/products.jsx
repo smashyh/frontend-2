@@ -19,8 +19,6 @@ color: black;
 margin-bottom: 15%;
 `;
 
-const strapiURL = 'http://localhost:1337';
-
 export default function Products() 
 {
     const { category } = useParams();
@@ -31,12 +29,13 @@ export default function Products()
     {
         async function fetchData()
         {
+            
             const config = 
             {
-                headers: { Authorization: 'Bearer b78558952db60ea2807bcd0662a595d994337755322db3215755b75b30bf7c89d54042e445176bc2a8e2a95239a2c8a13391e604b5c6c6bbb6669a340f6c362d0e3ac7eefdd37ffb45175218cc0faa64238156ae499218b236cca632fa0e1e261535f6064e1d230ae1db0b6b2518ba7e71775c3e4623531864f9539d2092dde8' },
+                headers: { Authorization: 'Bearer ' + import.meta.env.VITE_API_KEY },
             };
 
-            const data = await axios.get(strapiURL + `/api/categories?populate[0]=products&populate[1]=products.photos&filters[category_id][$eq]=${ category }`, config);
+            const data = await axios.get(import.meta.env.VITE_STRAPI_URL + `/api/categories?populate[0]=products&populate[1]=products.photos&filters[category_id][$eq]=${ category }`, config);
             
             // Invalid category response
             if (data.data.data[0] === undefined)
@@ -56,7 +55,7 @@ export default function Products()
                 ({
                     id: item.id,
                     name: item.attributes.name,
-                    image: strapiURL + item.attributes.photos.data[0].attributes.url, 
+                    image: import.meta.env.VITE_STRAPI_URL + item.attributes.photos.data[0].attributes.url, 
                     description: item.attributes.short_description,
                     price: item.attributes.price,
                     productId: item.attributes.product_id,
@@ -75,7 +74,7 @@ export default function Products()
         return(
             <Wrapper>
                 <Header/>
-                <ImageBanner $image="http://localhost:1337/uploads/foob_c9ef7b563a.jpg"/>
+                <ImageBanner $image={import.meta.env.VITE_STRAPI_URL + "/uploads/foob_c9ef7b563a.jpg"}/>
                 <TextBanner></TextBanner>
                 <div style={{ textAlign: "center" }}>
                     <ProductDescription>Inga produkter kunde hittas i denna kategori.</ProductDescription>
@@ -87,7 +86,7 @@ export default function Products()
     return(
         <Wrapper>
             <Header/>
-            <ImageBanner $image="http://localhost:1337/uploads/foob_c9ef7b563a.jpg"/>
+            <ImageBanner $image={import.meta.env.VITE_STRAPI_URL + "uploads/foob_c9ef7b563a.jpg"}/>
             <TextBanner>{ categoryName }</TextBanner>
             <ProductShowcase $products={ products } />
         </Wrapper>

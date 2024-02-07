@@ -74,8 +74,6 @@ var addToCartFunc = (productID) =>
     localStorage.setItem('temp_cart', JSON.stringify(cart));
 };
 
-const strapiURL = 'http://localhost:1337';
-
 function InStockComp(props)
 {
     if (props.$inStock == 0)
@@ -109,10 +107,10 @@ export default function ProductDetails(props)
         {
             const config = 
             {
-                headers: { Authorization: 'Bearer b78558952db60ea2807bcd0662a595d994337755322db3215755b75b30bf7c89d54042e445176bc2a8e2a95239a2c8a13391e604b5c6c6bbb6669a340f6c362d0e3ac7eefdd37ffb45175218cc0faa64238156ae499218b236cca632fa0e1e261535f6064e1d230ae1db0b6b2518ba7e71775c3e4623531864f9539d2092dde8' },
+                headers: { Authorization: 'Bearer ' + import.meta.env.VITE_API_KEY },
             };
 
-            const data = await axios.get(strapiURL + `/api/products?populate=*&filters[product_id][$eq]=${props.$productID}`, config);
+            const data = await axios.get(import.meta.env.VITE_STRAPI_URL + `/api/products?populate=*&filters[product_id][$eq]=${props.$productID}`, config);
             
             const item = data.data.data[0];
             if (item === undefined)

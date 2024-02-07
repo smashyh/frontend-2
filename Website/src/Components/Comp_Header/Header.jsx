@@ -4,6 +4,7 @@ import HeaderButton from "./HeaderButton.jsx";
 import { Link } from "react-router-dom";
 import ShoppingCartButton from "./ShoppingCartButton.jsx";
 import axios from "axios";
+import process from "process";
 
 const Wrapper = styled.div`
 
@@ -29,8 +30,6 @@ const StyledLink = styled(Link)`
     color: inherit;
 `;
 
-const strapiURL = 'http://localhost:1337';
-
 function CategoryDropdownButton(props)
 {
     var categories = [];
@@ -39,10 +38,10 @@ function CategoryDropdownButton(props)
     {
         const config = 
         {
-            headers: { Authorization: 'Bearer b78558952db60ea2807bcd0662a595d994337755322db3215755b75b30bf7c89d54042e445176bc2a8e2a95239a2c8a13391e604b5c6c6bbb6669a340f6c362d0e3ac7eefdd37ffb45175218cc0faa64238156ae499218b236cca632fa0e1e261535f6064e1d230ae1db0b6b2518ba7e71775c3e4623531864f9539d2092dde8' },
+            headers: { Authorization: 'Bearer ' + import.meta.env.VITE_API_KEY },
         };
 
-        const data = await axios.get(strapiURL + `/api/categories`, config);
+        const data = await axios.get(import.meta.env.VITE_STRAPI_URL + `/api/categories`, config);
         
         
         data.data.data.forEach(item => 
