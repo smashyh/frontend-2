@@ -19,7 +19,7 @@ const Background = styled.div`
     font-family: system-ui, Helvetica;
     width: 100%;
     height: 84px;
-    background-color: #2a8545;
+    background-color: #e0e0e0;
     color: white;
 `;
 
