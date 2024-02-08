@@ -5,6 +5,9 @@ import TextBanner from "../Components/Banners/TextBanner";
 import ProductShowcase  from "../Components/Products/ProductShowcase";
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import Footer from "../Components/Comp_Footer/Footer";
+
+
 
 const Wrapper = styled.div`
     
@@ -62,6 +65,7 @@ export default function Home()
             <ProductWrap>
             <ProductShowcase $products={ products } />
             </ProductWrap>
+            <Footer/>
             
         </Wrapper>
     );

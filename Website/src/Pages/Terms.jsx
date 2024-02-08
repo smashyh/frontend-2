@@ -77,7 +77,7 @@ export default function Terms() {
         <h2>Sekretess</h2>
         <Content>
           <p>
-            Din sekretess tas på allvar. Vi behandlar dina personuppgifter på ett sådant sätt som skyddar dig från allmänheten.
+            Din sekretess tas på allvar. Vi behandlar dina personuppgifter på ett sådant sätt som skyddar dig från allmänheten genom att följa de lagar som gäller.
           
           </p>
          
