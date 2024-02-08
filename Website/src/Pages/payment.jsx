@@ -33,7 +33,6 @@ export default function PaymentPage()
     return(
     <Wrapper>
         <Header/>
-        <ImageBanner $image={import.meta.env.VITE_STRAPI_URL + "/uploads/foob_c9ef7b563a.jpg"}/>
         <TextBanner>Betalning</TextBanner>
         <PaymentForm/>
     </Wrapper>

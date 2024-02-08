@@ -51,7 +51,7 @@ export default function Products()
 
             console.log(data);
 
-            setCategoryName(data.data.data[0].attributes.category_name);
+            setCategoryName(data.data.data[0].attributes.categroy_name);
 
             const tempArr = [];
             
@@ -80,7 +80,7 @@ export default function Products()
         return(
             <Wrapper>
                 <Header/>
-                <TextBanner></TextBanner>
+                <TextBanner><h2>{ categoryName }</h2></TextBanner>
                 <div style={{ textAlign: "center" }}>
                     <ProductDescription>Inga produkter kunde hittas i denna kategori.</ProductDescription>
                 </div>
@@ -91,7 +91,7 @@ export default function Products()
     return(
         <Wrapper>
             <Header/>
-            <TextBanner>{ categoryName }</TextBanner>
+            <TextBanner><h2>{ categoryName }</h2></TextBanner>
             <ProductWrap><ProductShowcase $products={ products } /></ProductWrap>
         </Wrapper>
     );

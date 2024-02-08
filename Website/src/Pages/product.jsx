@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useParams } from 'react-router-dom';
 import Header from "../Components/Comp_Header/Header";
-import ImageBanner from "../Components/Banners/ImageBanner";
+import TextBanner from "../Components/Banners/TextBanner";
 import ProductDetails from "../Components/Products/ProductDetails";
 
 const Wrapper = styled.div``;
@@ -18,8 +18,9 @@ export default function ProductPage(props)
     return(
         <Wrapper>
             <Header/>
+            <TextBanner><h2>Produkt</h2></TextBanner>
             <ProductWrap>
-            <ProductDetails $productID={productID}/>
+                <ProductDetails $productID={productID}/>
             </ProductWrap>
         </Wrapper>
     );

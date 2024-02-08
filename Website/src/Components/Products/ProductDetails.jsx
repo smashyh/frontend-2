@@ -69,7 +69,12 @@ const localStorageCartName = 'temp_cart';
 var addToCartFunc = (productID) =>
 {
     console.log(productID);
-    const cart = JSON.parse(localStorage.getItem(localStorageCartName));
+    let cart = JSON.parse(localStorage.getItem(localStorageCartName));
+    if (cart === null || cart === undefined)
+    {
+        cart = [];
+    }
+
     cart.push(productID);
     localStorage.setItem('temp_cart', JSON.stringify(cart));
 };
@@ -147,7 +152,6 @@ export default function ProductDetails(props)
     {
         return(
             <Wrapper>
-                <TextBanner></TextBanner>
                 <div style={{ textAlign: "center" }}>
                     <ProductDescription>Fel: Produkten kunde inte hittas.</ProductDescription>
                 </div>
@@ -159,7 +163,6 @@ export default function ProductDetails(props)
     {
         return(
             <Wrapper>
-                <TextBanner></TextBanner>
                 <ProductDivider>
                     <ProductImg src={ product.image }/>
     
@@ -179,7 +182,6 @@ export default function ProductDetails(props)
 
     return(
         <Wrapper>
-            <TextBanner></TextBanner>
             <ProductDivider>
                 <ProductImg src={ product.image }/>
 

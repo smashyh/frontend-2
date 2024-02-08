@@ -48,7 +48,7 @@ function CategoryDropdownButton(props)
         {
             categories.push(
                 {
-                    label: item.attributes.category_name,
+                    label: item.attributes.categroy_name, // <-- accidentally misspelled "category" in strapi so i have no intention of changing this shit for now
                     path: '/products/' + item.attributes.category_id
                 });
         });
