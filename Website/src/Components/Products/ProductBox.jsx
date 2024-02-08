@@ -27,6 +27,7 @@ font-family: system-ui, Helvetica;
 font-size: 1.25rem;
 color: black;
 margin-bottom: 0.5rem;
+margin-left: 0.2rem;
 `;
 
 const ProductDescription = styled.p`
@@ -34,12 +35,14 @@ font-family: system-ui, Helvetica;
 font-size: 1rem;
 color: black;
 margin-bottom: 1rem;
+margin-left: 0.2rem;
 `;
 
 const ProductPrice = styled.p`
 font-family: system-ui, Helvetica;
 font-size: 1.10rem;
 color: black;
+margin-left: 0.2rem;
 `;
 
 /**

@@ -56,7 +56,8 @@ const CartItemButton = styled.button`
     font-size: 1.10rem;
     border-width: 0;
     background-color: var(--bannerColor);
-    color: #FFFFFF;
+    color: black;
+    transition: ease background-color 250ms;
     width: 192px;
     height: 48px;
     cursor: pointer;

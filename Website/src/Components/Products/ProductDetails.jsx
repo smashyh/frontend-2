@@ -52,18 +52,21 @@ const AddToCartButton = styled.button`
     font-size: 1.10rem;
     border-width: 0;
     background-color: var(--bannerColor);
-    color: #FFFFFF;
+    color: black;
     width: 192px;
     height: 48px;
     cursor: pointer;
+    transition: ease background-color 250ms;
     background-color: var(--bannerColor);
     &:hover
     {
         background-color: var(--bannerHoverColor);
     }
+    
     //--bannerColor: #2a8545;
     //--bannerHoverColor: #1b552c;
 `;
+
 
 const localStorageCartName = 'temp_cart';
 var addToCartFunc = (productID) =>

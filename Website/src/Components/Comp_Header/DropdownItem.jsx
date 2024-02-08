@@ -9,12 +9,14 @@ const Background = styled.div`
     height: 64px;
     position: relative;
     cursor: pointer;
+    border: 1px solid #CDC2B1;
+    color: black;
+    font-weight: bold;
     background-color: ${ props => props.$toggle ? "var(--bannerPressedColor)" : "var(--bannerColor)" };
     &:hover
     {
         background-color: ${ props => props.$toggle ? "var(--bannerPressedHoverColor)" : "var(--bannerHoverColor)" };
     }
-    color: white;
 `;
 
 export default function DropdownItem(props)

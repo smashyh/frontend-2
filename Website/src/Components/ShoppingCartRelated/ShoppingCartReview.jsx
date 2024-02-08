@@ -3,6 +3,7 @@ import ShoppingCartItem from "./ShoppingCartItem";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
     margin-left: 10%;
@@ -12,12 +13,20 @@ const Wrapper = styled.div`
     align-items: center;
 `;
 
+const StyledLink = styled(Link)`
+
+    text-decoration: none;
+    color: inherit;
+`;
+
 const CheckoutButton = styled.button`
     font-family: system-ui, Helvetica;
     font-size: 1.10rem;
     border-width: 0;
     background-color: var(--bannerColor);
-    color: #FFFFFF;
+    color: black;
+    font-weight: bold;
+    transition: ease background-color 250ms;
     width: 192px;
     height: 48px;
     cursor: pointer;
@@ -133,8 +142,10 @@ export default function ShoppingCartReview()
             <div style={{marginTop: '32px'}}/>
 
             <h2>Att betala: { totalPrice }kr</h2>
-
-            <CheckoutButton>Betala</CheckoutButton>
+            <StyledLink to='/payment'>
+                <CheckoutButton>Betala</CheckoutButton>
+            </StyledLink>
+            
             <div style={{marginRight: '10%'}}/>
         </Wrapper>
     );
