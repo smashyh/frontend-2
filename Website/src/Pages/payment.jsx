@@ -2,9 +2,22 @@ import styled from "styled-components";
 import { useState } from "react";
 import TextBanner from "../Components/Banners/TextBanner";
 import Header from "../Components/Comp_Header/Header";
-import ImageBanner from "../Components/Banners/ImageBanner";
+import { Link } from "react-router-dom";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+    
+`;
+
+//text css verkar inte följa med, workaround
+const TxtWrap = styled.div`
+    font-size: 2rem;
+`;
+
+const StyledLink = styled(Link)`
+
+    text-decoration: none;
+    color: inherit;
+`;
 
 
 const InputCard = styled.div`
@@ -230,7 +243,7 @@ function PaymentForm()
                 </NewsLabel>
                 
 
-                <PayButton>Betala</PayButton>
+                <StyledLink to='/confirmation'><PayButton>Betala</PayButton></StyledLink>
                 </InputCard>
     )
 }
@@ -240,7 +253,9 @@ export default function PaymentPage()
     return(
     <Wrapper>
         <Header/>
+        <TxtWrap>
         <TextBanner>Betalning</TextBanner>
+        </TxtWrap>
         <PaymentForm/>
     </Wrapper>
     );
