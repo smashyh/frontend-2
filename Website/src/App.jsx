@@ -13,6 +13,7 @@ import Delivery from "./Pages/Delivery";
 import Returns from "./Pages/Returns";
 import Terms from "./Pages/Terms";
 import ContactFormPage from "./Pages/ContactFormPage";
+import Confirmation from "./Pages/confirmation";
 
 function App() 
 {
@@ -31,6 +32,7 @@ function App()
         <Route path='/delivery' element={<Delivery/>}/>
         <Route path='/returns' element={<Returns/>}/>
         <Route path='/terms' element={<Terms/>}/>
+        <Route path='/confirmation' element={<Confirmation/>}/>
         </Routes>
         </div>
     );
