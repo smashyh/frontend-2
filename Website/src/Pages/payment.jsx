@@ -3,6 +3,8 @@ import { useState } from "react";
 import TextBanner from "../Components/Banners/TextBanner";
 import Header from "../Components/Comp_Header/Header";
 import { Link } from "react-router-dom";
+import emailjs from '@emailjs/browser';
+import axios from "axios";
 
 const Wrapper = styled.div`
     
@@ -149,6 +151,79 @@ const PayButton = styled.button`
     }
 `;
 
+const localStorageCartName = 'temp_cart';
+
+async function makePurchase(firstName, senderEmail)
+{
+    const cart = JSON.parse(localStorage.getItem(localStorageCartName));
+    if (cart === undefined || cart.length == 0)
+    {
+        return;
+    }
+
+    let receiptProducts = "";
+    let price = 0;
+    
+    const config = 
+    {
+        headers: { Authorization: 'Bearer ' + import.meta.env.VITE_API_KEY },
+    };
+
+    for (let i = 0; i < cart.length; i++)
+    {
+        const data = await axios.get(import.meta.env.VITE_STRAPI_URL + `/api/products?populate=*&filters[product_id][$eq]=${cart[i]}`, config);
+
+        // check if invalid item and skip if it is
+        if (data === undefined || data === null)
+        {
+            continue;
+        }
+
+        const item = data.data.data[0];
+
+        if (item.attributes.in_stock == 0)
+        {
+            return;
+        }
+
+        const request = 
+        {
+            data:
+            {
+                in_stock: item.attributes.in_stock - 1,
+            }
+        };
+
+        //console.log()
+
+        // await axios.put(import.meta.env.VITE_STRAPI_URL + `/api/products?populate=*&filters[product_id][$eq]=${cart[i]}`, putConfig);
+        await axios.put(import.meta.env.VITE_STRAPI_URL + `/api/products/${item.id}`, request, config);
+
+        receiptProducts += `${item.attributes.name} - ${item.attributes.price}kr\n`;
+        // ({
+        //     name: item.attributes.name,
+        //     price: item.attributes.price,
+        // });
+
+        price += item.attributes.price;
+    }
+
+    let content =
+    {
+        to_name: firstName,
+        receipt: receiptProducts + "Totalt: " + price + "kr",
+        customer_email: senderEmail,
+    };
+
+    emailjs.send
+    (
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_RECEIPT_TEMPLATE_ID,
+        content,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+    );
+}
+
 function PaymentForm()
 {
     const [firstName, setFirstName] = useState('');
@@ -162,7 +237,7 @@ function PaymentForm()
                 <InputCard>
                 <LabelContainer>
                     <Label>Förnamn</Label>
-                    <NameField type="text" placeholder="Förnamn" />
+                    <NameField type="text" placeholder="Förnamn" onChange={ (e) => setFirstName(e.target.value) } />
                 </LabelContainer>
 
                 <LabelContainer>
@@ -172,7 +247,7 @@ function PaymentForm()
                 
                 <LabelContainer>
                     <Label>Email</Label>
-                    <EmailField type="text" placeholder="Email-Adress" />
+                    <EmailField type="text" placeholder="Email-Adress" onChange={ (e) => setEmail(e.target.value) } />
                 </LabelContainer>
                 
                 <LabelContainer>
@@ -243,7 +318,7 @@ function PaymentForm()
                 </NewsLabel>
                 
 
-                <StyledLink to='/confirmation'><PayButton>Betala</PayButton></StyledLink>
+                <StyledLink to='/confirmation'><PayButton onClick={ () => makePurchase(firstName, email) }>Betala</PayButton></StyledLink>
                 </InputCard>
     )
 }

@@ -119,7 +119,8 @@ export default function ProductDetails(props)
             };
 
             const data = await axios.get(import.meta.env.VITE_STRAPI_URL + `/api/products?populate=*&filters[product_id][$eq]=${props.$productID}`, config);
-            
+            console.log(data);
+
             const item = data.data.data[0];
             if (item === undefined)
             {
