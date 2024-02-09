@@ -103,10 +103,9 @@ export default function ShoppingCartReview()
         console.log(index);
         const cart = JSON.parse(localStorage.getItem(localStorageCartName));
         
-        const idx = cart.indexOf(index);
         if (index > -1)
         {
-            cart.splice(idx, 1);
+            cart.splice(index, 1);
             localStorage.setItem('temp_cart', JSON.stringify(cart));
             window.location.reload(false);
         }
