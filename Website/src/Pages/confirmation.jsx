@@ -32,6 +32,10 @@ const ThanksCard = styled.div`
     align-items: center;    
     margin-left: 25%;
     margin-right: 25%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    background-color: #f8f8f8;
 
     h1 {
       font-size: 4rem;
@@ -157,6 +161,7 @@ export default function Confirmation() {
         <Wrapper>
             <Header/>
             <ThanksCard>
+                
                 <h1>Tack för ditt köp hos oss!</h1>
                 <OrderDiv>
                 <p>Ordernr: </p> <OrderNummer/>
