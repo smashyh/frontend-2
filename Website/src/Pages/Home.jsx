@@ -63,10 +63,9 @@ export default function Home()
             <Header/>
             <TextBanner><h2>Nya produkter</h2></TextBanner>
             <ProductWrap>
-            <ProductShowcase $products={ products } />
+                <ProductShowcase $products={ products } />
             </ProductWrap>
             <Footer/>
-            
         </Wrapper>
     );
     

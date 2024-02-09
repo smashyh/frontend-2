@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import TextBanner from "../Components/Banners/TextBanner";
 import Header from "../Components/Comp_Header/Header";
+import { Link } from "react-router-dom";
 import { AiFillWechat } from "react-icons/ai";
 import { LiaTelegramPlane } from "react-icons/lia";
 import { AiFillPhone } from "react-icons/ai";
@@ -48,6 +49,7 @@ const ContactCard = styled.div`
 `;
 
 export default function Contact() {
+
     return(
         <Wrapper>
             <Header/>
@@ -62,7 +64,7 @@ export default function Contact() {
 
                 <ContactCard>
                 <LiaTelegramPlane />
-                <button>Maila Oss</button>
+                <Link to={ "/contact-form" }><button>Maila Oss</button></Link>
                 <p>Maila oss så hör vi av oss så fort vi kan!</p>
                 </ContactCard>
 
