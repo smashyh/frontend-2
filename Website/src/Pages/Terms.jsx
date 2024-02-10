@@ -3,6 +3,7 @@ import styled from "styled-components";
 import TextBanner from "../Components/Banners/TextBanner";
 import Header from "../Components/Comp_Header/Header";
 import { Link } from "react-router-dom";
+import Footer from "../Components/Comp_Footer/Footer";
 
 const Wrapper = styled.div`
   /* Add your global styling here */
@@ -90,6 +91,7 @@ export default function Terms() {
           <StyledLink to="/contact">här</StyledLink>.
         </Content>
       </SmallSectionWrapper>
+      <Footer/>
     </Wrapper>
   );
 }

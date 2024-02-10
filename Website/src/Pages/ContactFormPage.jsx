@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import TextBanner from "../Components/Banners/TextBanner";
 import Header from "../Components/Comp_Header/Header";
 import emailjs from '@emailjs/browser';
+import Footer from "../Components/Comp_Footer/Footer";
 
 const Wrapper = styled.div``;
 
@@ -116,6 +117,7 @@ export default function ContactFormPage()
             <Header/>
             <TextBanner><h2>Kontakt</h2></TextBanner>
             <ContactForm/>
+            <Footer/>
         </Wrapper>
         );
     }

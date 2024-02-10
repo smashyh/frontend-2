@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { AiFillWechat } from "react-icons/ai";
 import { LiaTelegramPlane } from "react-icons/lia";
 import { AiFillPhone } from "react-icons/ai";
+import Footer from "../Components/Comp_Footer/Footer";
 
 
 const Wrapper = styled.div`
@@ -53,6 +54,7 @@ export default function Contact() {
     return(
         <Wrapper>
             <Header/>
+           
             <TextBanner><h2>Kontaktinfo</h2></TextBanner>
             <ContactContainer>
 
@@ -75,6 +77,7 @@ export default function Contact() {
                 </ContactCard>
 
             </ContactContainer>
+            <Footer/>
         </Wrapper>
     );
 } 

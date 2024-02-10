@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Header from "../Components/Comp_Header/Header";
 import TextBanner from "../Components/Banners/TextBanner";
 import ProductDetails from "../Components/Products/ProductDetails";
+import Footer from "../Components/Comp_Footer/Footer";
 
 const Wrapper = styled.div``;
 
@@ -22,6 +23,7 @@ export default function ProductPage(props)
             <ProductWrap>
                 <ProductDetails $productID={productID}/>
             </ProductWrap>
+            <Footer/>
         </Wrapper>
     );
 }

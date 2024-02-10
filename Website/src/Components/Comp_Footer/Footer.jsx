@@ -29,7 +29,7 @@ const FooterWrapper = styled.div`
   display: flex;
   align-items: center; 
   justify-content: space-around;
-  height: 140px; 
+  height: 75px; 
 `;
 
 const FooterColumnWrapper = styled.div`
@@ -43,6 +43,7 @@ const FooterColumn = styled.div`
   gap: 5px; 
   width: 100px; 
   justify-content: space-around;
+  
 `;
 
 const FooterLink = styled(Link)`

@@ -4,6 +4,8 @@ import Header from "../Components/Comp_Header/Header";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import OrderItem from "../Components/ShoppingCartRelated/OrderItem";
+import Footer from "../Components/Comp_Footer/Footer";
+
 
 const Wrapper = styled.div`
 
@@ -160,6 +162,7 @@ export default function Confirmation() {
     return(
         <Wrapper>
             <Header/>
+            
             <ThanksCard>
                 
                 <h1>Tack för ditt köp hos oss!</h1>
@@ -174,7 +177,7 @@ export default function Confirmation() {
                 <OrderReview></OrderReview>
 
             </ThanksCard>
-
+            <Footer/>
         </Wrapper>
     );
 } 

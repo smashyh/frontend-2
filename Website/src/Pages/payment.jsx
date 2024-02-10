@@ -5,6 +5,7 @@ import Header from "../Components/Comp_Header/Header";
 import { Link } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 import axios from "axios";
+import Footer from "../Components/Comp_Footer/Footer";
 
 const Wrapper = styled.div`
     
@@ -332,6 +333,7 @@ export default function PaymentPage()
         <TextBanner>Betalning</TextBanner>
         </TxtWrap>
         <PaymentForm/>
+        <Footer/>
     </Wrapper>
     );
 }

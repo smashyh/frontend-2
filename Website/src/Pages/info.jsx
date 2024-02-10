@@ -3,6 +3,7 @@ import styled from "styled-components";
 import TextBanner from "../Components/Banners/TextBanner";
 import Header from "../Components/Comp_Header/Header";
 import ProductShowcase from "../Components/Products/ProductShowcase";
+import Footer from "../Components/Comp_Footer/Footer";
 
 const Wrapper = styled.div`
     /* Lägg till eventuell styling för Wrapper här */
@@ -43,6 +44,7 @@ export default function Info() {
     return (
         <Wrapper>
             <Header />
+            
             <TextBanner><h2>Om Oss</h2></TextBanner>
 
             <OwnersWrapper>
@@ -95,6 +97,7 @@ export default function Info() {
                     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
             </OurVisionSection>
+            <Footer/>
         </Wrapper>
     );
 }

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { FiPackage } from "react-icons/fi";
 import { IoIosReturnLeft } from "react-icons/io";
 import { CiCreditCard1 } from "react-icons/ci";
+import Footer from "../Components/Comp_Footer/Footer";
 
 
 const StyledLink = styled(Link)`
@@ -67,6 +68,7 @@ export default function CustomerService() {
     return(
         <Wrapper>
             <Header/>
+            
             <TextBanner><h2>Kundservice</h2></TextBanner>
             <TextCard> 
                 <h2>Välkommen till kundservice!</h2>
@@ -95,6 +97,7 @@ export default function CustomerService() {
                 <p>Kontakta oss <StyledLink to='/contact'>här</StyledLink>.</p>
                 
             </QuestionCard>
+            <Footer/>
         </Wrapper>
     );
 } 

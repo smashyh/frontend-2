@@ -6,6 +6,7 @@ import ProductShowcase from "../Components/Products/ProductShowcase";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
+import Footer from "../Components/Comp_Footer/Footer";
 
 
 const Wrapper = styled.div`
@@ -84,6 +85,7 @@ export default function Products()
                 <div style={{ textAlign: "center" }}>
                     <ProductDescription>Inga produkter kunde hittas i denna kategori.</ProductDescription>
                 </div>
+                <Footer/>
             </Wrapper>
         );
     }
