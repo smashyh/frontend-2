@@ -7,7 +7,7 @@ const ProductContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    
     flex-wrap: wrap;
     grid-column-gap: 8px;
     grid-row-gap: 8px;

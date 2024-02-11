@@ -10,7 +10,7 @@ import Footer from "../Components/Comp_Footer/Footer";
 
 
 const Wrapper = styled.div`
-    padding-bottom: 75px;
+    padding-bottom: 16px;
     box-sizing: border-box;
 `;
 
@@ -18,6 +18,7 @@ const ProductWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 75px;
 `;
 
 const ProductDescription = styled.p`
@@ -96,6 +97,7 @@ export default function Products()
             <Header/>
             <TextBanner><h2>{ categoryName }</h2></TextBanner>
             <ProductWrap><ProductShowcase $products={ products } /></ProductWrap>
+            <Footer/>
         </Wrapper>
     );
 
