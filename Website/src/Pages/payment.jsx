@@ -8,7 +8,8 @@ import axios from "axios";
 import Footer from "../Components/Comp_Footer/Footer";
 
 const Wrapper = styled.div`
-    
+    padding-bottom: 75px;
+    box-sizing: border-box;
 `;
 
 //text css verkar inte följa med, workaround

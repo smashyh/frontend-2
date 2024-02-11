@@ -5,7 +5,10 @@ import Header from "../Components/Comp_Header/Header";
 import emailjs from '@emailjs/browser';
 import Footer from "../Components/Comp_Footer/Footer";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+    padding-bottom: 75px;
+    box-sizing: border-box;
+`;
 
 const InputCard = styled.form`
     display: flex;

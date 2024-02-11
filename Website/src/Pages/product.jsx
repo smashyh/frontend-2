@@ -5,7 +5,10 @@ import TextBanner from "../Components/Banners/TextBanner";
 import ProductDetails from "../Components/Products/ProductDetails";
 import Footer from "../Components/Comp_Footer/Footer";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+    padding-bottom: 75px;
+    box-sizing: border-box;
+`;
 
 const ProductWrap = styled.div`
     display: flex;

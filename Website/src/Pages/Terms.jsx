@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import Footer from "../Components/Comp_Footer/Footer";
 
 const Wrapper = styled.div`
-  /* Add your global styling here */
+    padding-bottom: 75px;
+    box-sizing: border-box;
 `;
 
 const StyledLink = styled(Link)`

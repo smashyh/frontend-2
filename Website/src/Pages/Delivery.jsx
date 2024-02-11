@@ -6,7 +6,8 @@ import { FaSearch } from "react-icons/fa";
 import Footer from "../Components/Comp_Footer/Footer";
 
 const Wrapper = styled.div`
-    
+    padding-bottom: 75px;
+    box-sizing: border-box;
 `;
 
 const StyledLink = styled(Link)`

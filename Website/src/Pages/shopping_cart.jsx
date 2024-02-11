@@ -6,7 +6,8 @@ import ShoppingCartReview from "../Components/ShoppingCartRelated/ShoppingCartRe
 import Footer from "../Components/Comp_Footer/Footer";
 
 const Wrapper = styled.div`
-    
+    padding-bottom: 75px;
+    box-sizing: border-box;
 `;
 
 export default function ShoppingCartPage() 

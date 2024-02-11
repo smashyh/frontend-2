@@ -6,7 +6,8 @@ import ProductShowcase from "../Components/Products/ProductShowcase";
 import Footer from "../Components/Comp_Footer/Footer";
 
 const Wrapper = styled.div`
-    /* Lägg till eventuell styling för Wrapper här */
+    padding-bottom: 75px;
+    box-sizing: border-box;
 `;
 
 const OwnersWrapper = styled.div`

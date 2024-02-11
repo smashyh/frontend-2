@@ -15,7 +15,8 @@ const StyledLink = styled(Link)`
 `;
 
 const Wrapper = styled.div`
-    
+    padding-bottom: 75px;
+    box-sizing: border-box;
 `;
 
 const ServiceContainer = styled.div`
